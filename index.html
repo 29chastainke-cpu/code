@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Element Forge</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <header class="topbar">
+        <div>
+          <p class="eyebrow">alchemy lab</p>
+          <h1>Element Forge</h1>
+        </div>
+        <button id="reset-btn" class="secondary-btn">Reset world</button>
+      </header>
+
+      <div class="tab-bar" role="tablist" aria-label="Game tabs">
+        <button class="tab-button active" id="tab-forge" role="tab" aria-selected="true" aria-controls="forge-tab">Forge Lab</button>
+        <button class="tab-button" id="tab-quiz" role="tab" aria-selected="false" aria-controls="quiz-tab">Ion Quiz</button>
+        <button class="tab-button" id="tab-info" role="tab" aria-selected="false" aria-controls="info-tab">Element Info</button>
+        <button class="tab-button" id="tab-world" role="tab" aria-selected="false" aria-controls="world-tab">World Things</button>
+        <button class="tab-button" id="tab-danger" role="tab" aria-selected="false" aria-controls="danger-tab">Hazard Guide</button>
+      </div>
+
+      <main class="game-layout" id="forge-tab" role="tabpanel" aria-label="Forge lab">
+        <section class="panel inventory-panel">
+          <div class="panel-header">
+            <h2>Your elements</h2>
+            <span id="count-badge" class="badge">0</span>
+          </div>
+          <div id="inventory" class="inventory-grid" aria-live="polite"></div>
+        </section>
+
+        <aside class="panel sidebar-panel">
+          <div class="selection-box">
+            <h3>Selected</h3>
+            <div id="selection" class="selection-area">
+              <div class="placeholder">Pick two elements</div>
+            </div>
+          </div>
+
+          <div class="status-box">
+            <h3>Lab status</h3>
+            <p id="status-text">Combine any two discovered elements to create something new.</p>
+          </div>
+
+          <div class="recipes-box">
+            <h3>Discovered compounds</h3>
+            <ul id="recipes" class="recipe-list"></ul>
+          </div>
+
+          <div class="recipes-box">
+            <h3>Formula ideas</h3>
+            <ul id="ideas" class="recipe-list"></ul>
+          </div>
+        </aside>
+      </main>
+
+      <section id="quiz-tab" class="panel quiz-panel hidden" role="tabpanel" aria-label="Ion quiz" aria-hidden="true">
+        <div class="quiz-header">
+          <div>
+            <p class="eyebrow">student practice</p>
+            <h2>Ion & valence quiz</h2>
+          </div>
+          <div class="score-box">
+            <span>Score</span>
+            <strong id="quiz-score">0</strong>
+          </div>
+        </div>
+
+        <div id="quiz-card" class="quiz-card">
+          <div id="quiz-question" class="quiz-question"></div>
+          <div id="quiz-options" class="quiz-options"></div>
+          <div id="quiz-feedback" class="quiz-feedback"></div>
+          <button id="quiz-next" class="secondary-btn quiz-next hidden">Next question</button>
+        </div>
+      </section>
+
+      <section id="info-tab" class="panel info-panel hidden" role="tabpanel" aria-label="Element information" aria-hidden="true">
+        <div class="info-header">
+          <div>
+            <p class="eyebrow">chemistry guide</p>
+            <h2>Element knowledge</h2>
+          </div>
+        </div>
+        <div id="element-info-list" class="element-info-list"></div>
+      </section>
+
+      <section id="world-tab" class="panel world-panel hidden" role="tabpanel" aria-label="World materials" aria-hidden="true">
+        <div class="info-header">
+          <div>
+            <p class="eyebrow">real world</p>
+            <h2>Things in the world</h2>
+          </div>
+        </div>
+        <div id="world-item-list" class="world-item-list"></div>
+      </section>
+
+      <section id="danger-tab" class="panel danger-panel hidden" role="tabpanel" aria-label="Highly hazardous elements" aria-hidden="true">
+        <div class="info-header">
+          <div>
+            <p class="eyebrow">laboratory safety</p>
+            <h2>Highly hazardous elements</h2>
+            <p class="danger-intro">Pure forms of these elements can cause severe harm through toxicity, reactivity, or radiation. Risk depends on the form and exposure; never handle or test them outside a properly supervised, equipped lab.</p>
+          </div>
+        </div>
+        <div id="danger-item-list" class="danger-item-list"></div>
+      </section>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
